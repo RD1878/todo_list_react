@@ -1,0 +1,14 @@
+.app-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.app-header h1 {
+    flex-grow: 1;
+}
+  
+.app-header p {
+    font-size: 20px;
+    color: dimgrey;
+}
