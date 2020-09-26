@@ -6,7 +6,7 @@ export default ({ todos }) => {
     const items = todos.map((item) => {
         const { id, ...otherItemProps } = item;
         return (
-            <li key={id} className='list-group-item'>
+            <li key={id} className="list-group-item">
                 <TodoListItem
                     {...otherItemProps}
                 />
@@ -15,7 +15,7 @@ export default ({ todos }) => {
     })
     
     return (
-        <ul className='list-group todo-list'>
+        <ul className="list-group todo-list">
             {items}
         </ul>
     )

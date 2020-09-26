@@ -3,8 +3,8 @@ import './TodoListItem.css'
 
 export default ({ text, important = false }) => {
     const style = {
-        color: important ? 'red' : 'black',
-        fontWeight: important ? 'bold' : 'normal'
+        color: important ? "red" : "black",
+        fontWeight: important ? "bold" : "normal"
     };
     
     return (
