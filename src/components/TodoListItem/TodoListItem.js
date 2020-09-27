@@ -1,29 +1,42 @@
 import React from 'react';
+import cn from 'classnames';
 import './TodoListItem.css'
 
-export default ({ text, important = false }) => {
-    const style = {
-        color: important ? "red" : "black",
-        fontWeight: important ? "bold" : "normal"
-    };
+export default class TodoListItem extends React.Component { 
+    render() {  
+        const { 
+            text,
+            important,
+            done, 
+            onDeleted,
+            onToggleImportant,
+            onToggleDone
+        } = this.props;
+        
+        const textClassnames = cn('todo-list-item', { done, important })
+        
+        return (
+            <span className={textClassnames}>
+                <span
+                    className="todo-list-item-label"
+                    onClick={onToggleDone}>
+                    {text}
+                </span>
     
-    return (
-        <span className="todo-list-item">
-            <span
-                className="todo-list-item-label"
-                style={style}>
-                {text}
+                <button
+                    type="button"
+                    className="btn btn-outline-success btn-sm float-right"
+                    onClick={onToggleImportant}>
+                    <i className="fa fa-exclamation" />
+                </button>
+    
+                <button 
+                    type="button"
+                    className="btn btn-outline-danger btn-sm float-right"
+                    onClick={onDeleted}>
+                    <i className="fa fa-trash-o" />
+                </button>
             </span>
-
-            <button type="button"
-                    className="btn btn-outline-success btn-sm float-right">
-                <i className="fa fa-exclamation" />
-            </button>
-
-            <button type="button"
-                    className="btn btn-outline-danger btn-sm float-right">
-                <i className="fa fa-trash-o" />
-            </button>
-            </span>
-    );
+        );
+    }
 }

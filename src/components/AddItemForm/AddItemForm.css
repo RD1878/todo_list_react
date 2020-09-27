@@ -1,0 +1,12 @@
+.add-item-container {
+    margin-top: 15px;
+    
+}
+
+.add-item-container button {
+    width: 40%;
+}
+
+.add-item-container input {
+    margin-right: 10px;
+}
